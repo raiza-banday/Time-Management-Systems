@@ -1,0 +1,462 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    margin: 40px 0 0 0;
+}
+
+.container {
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 700px;
+}
+
+.sidebar {
+    background-color: whitesmoke;
+    display: block;
+    width: 30%;
+    height: 90%;
+}
+
+.sidebarBtns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 40%;
+}
+
+.sidebarconts {
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: 90%;
+}
+
+.sidebar .btns {
+    background-color: #66785F;
+    margin: 13px 0 0 20px;
+    padding: 1rem;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    width: 90%;
+}
+
+.btns:hover {
+    background-color: #3a4437;
+}
+
+.calcontainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 60%;
+}
+
+.calcontent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.calendar {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.calendar-header {
+    width: 100%;
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+.months {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 25pt;
+    font-weight: bold;
+    border-radius: 10px 10px 0 0;
+    width: 100%;
+    height: 100%;
+}
+
+.months > button {
+    background-color: #66785F;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    width: 10%;
+    height: 70%;
+}
+
+.months > p {
+    width: 60%;
+    text-align: center;
+    font-size: 18pt;
+}
+
+.calendar-grid {
+    width: 80%;
+    height: 70%;
+    display: grid;
+    margin: 0 0 15px 45px;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+}
+
+.date {
+    padding: 0.5rem;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.date.inactive {
+    color: #999;
+}
+
+.date.active {
+    background-color: #66785F;
+    color: white;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    height: 90%;
+}
+
+.mainheader {
+    /* background-color: black; */
+
+    display: flex;
+    width: 100%;
+    height: 10%;
+}
+
+.search {
+    /* background-color: blue; */
+
+    width: 100%;
+    height: 100%;
+    margin-top: 12px;
+    margin-left: 570px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+
+}
+
+.mainbody {
+    /* background-color: red; */
+
+    width: 100%;
+    height: 90%;
+}
+
+form {
+    background-color: white;
+    margin: 20px 0 0 270px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    width: 50%;
+}
+
+form h2 {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+form input, form button {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+form button {
+    background-color: #66785F;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #91AC8F;
+}
+
+/* Timer display */
+.timer {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    margin-left: 10px;
+}
+
+/* Timer buttons */
+.timer-btn, .reset-btn {
+    padding: 5px 10px;
+    margin: 5px 0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+/* Style for Start/Stop Timer button */
+.timer-btn {
+    background-color: #4CAF50; /* Green for start/stop */
+    color: white;
+}
+
+.timer-btn:hover {
+    background-color: #45a049;
+}
+
+/* Style for Reset Timer button */
+.reset-btn {
+    background-color: #f44336; /* Red for reset */
+    color: white;
+}
+
+.reset-btn:hover {
+    background-color: #e53935;
+}
+
+/* Style for task container (added some padding for better spacing) */
+.task {
+    background-color: #95a98d;
+    display: flex;
+    justify-content: space-between;  /* Align timer controls on the right */
+    align-items: center;
+    width: 80%;
+    margin: 10px 0 0 100px;
+    gap: 30px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    color: white;
+}
+
+.task:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2); /* Lift the card slightly */
+    transition: all 0.3s ease;
+}
+
+/* Style for task completion (done state) */
+.task.done {
+    background-color: #d4edda; /* Light green background */
+    color: #155724; /* Dark green text */
+    text-decoration: line-through; /* Strike-through text */
+}
+
+/* Button Styling */
+button {
+    padding: 5px 10px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Style for Active View Button */
+button.active {
+    background-color: #007bff;
+    color: white;
+}
+
+/* View Button active styling when active */
+button#viewTaskBtn.active {
+    background-color: #3a4437;
+}
+
+button.done-toggle {
+    background-color: #007bff;
+    color: white;
+}
+
+button.done-toggle:hover {
+    background-color: #0056b3;
+}
+
+button.delete {
+    background-color: #dc3545;
+    color: white;
+}
+
+button.delete:hover {
+    background-color: #c82333;
+}
+
+button.edit {
+    background-color: green; 
+    color: #fff;             
+    border: none;             
+    padding: 5px 10px;        
+    margin: 5px 2px;          
+    cursor: pointer;          
+    border-radius: 4px;       
+    font-size: 14px;          
+}
+  
+button.edit:hover {
+    background-color: green; 
+    transition: background-color 0.3s ease;
+}
+  
+
+.dailysummaryconts {
+    /* background-color: green; */
+
+    display: absolute;
+    margin: 20px 0 0 100px;
+    width: 80%;
+    height: 50%;
+
+}
+
+#dailySummaryContainer {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+#dailySummaryContainer input[type="date"] {
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#dailySummaryContainer button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#dailySummaryContainer button:hover {
+    background-color: #45a049;
+}
+
+/* Daily summary container styles */
+#dailySummaryContainer {
+    background-color: #ffffff; /* White background for contrast */
+    padding: 20px;
+    border-radius: 8px; 
+    margin: 20px 0 0 100px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    max-width: 858px;
+    width: 90%; /* Responsive width */
+    text-align: center;
+}
+
+#weeklySummaryContanier {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+#weeklySummaryContainer input[type="date"] {
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#weeklySummaryContainer button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#weeklySummaryContainer button:hover {
+    background-color: #45a049;  
+}
+
+#weeklySummaryContainer {
+    background-color: #ffffff; /* White background for contrast */
+    padding: 20px;
+    border-radius: 8px; 
+    margin: 20px 0 0 100px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    max-width: 858px;
+    width: 90%; /* Responsive width */
+    text-align: center;
+}
+
+
+#taskSearchBar {
+    width: 200px;
+    padding: 10px;
+    margin: 15px 0 15px 0;
+    border-radius: 5px 0 0 5px;
+    border: 1px solid #ccc;
+  }
+  
+  /* Style for the search button */
+#searchBtn {
+    width: 13%;
+    padding: 10px;
+    margin: 15px 0 15px 0;
+    font-size: 14px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 0 4px 4px 0px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect for the search button */
+#searchBtn:hover {
+background-color: #45a049;
+}
+
+/* Style for the button when it's disabled */
+#searchBtn:disabled {
+background-color: #ccc;
+cursor: not-allowed;
+}

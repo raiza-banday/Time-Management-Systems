@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Time Management System with Smart Task Scheduling & Local Storage</title>
+        <link rel="stylesheet" href="/CSS/style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="sidebar">
+                <div class="sidebarBtns">
+                    <div class="sidebarconts">
+                        <button class="btns" id="viewTaskBtn">VIEW</button>
+                        <button class="btns" id="addTaskBtn">ADD</button>
+                        <button class="btns" id="dailySummaryBtn">DAILY SUMMARY</button>
+                        <button class="btns" id="weeklySummaryLink">WEEKLY SUMMARY</button> <!-- Updated link -->
+                    </div>
+                </div>
+                <div class="calcontainer">
+                    <div class="calcontent">
+                        <div class="calendar">
+                            <div class="calendar-header">
+                                <div class="months">
+                                    <button id="prevBtn"><i class="fa fa-angle-left"></i></button>
+                                    <p id="monAndYear"></p>
+                                    <button id="nextBtn"><i class="fa fa-angle-right"></i></button>
+                                </div>
+                            </div>
+                            <div class="calendar-grid" id="dates"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main">
+                <div class="mainheader">
+                    <div class="search">
+                        <input type="text" id="taskSearchBar" placeholder="Search tasks...">
+                        <button id="searchBtn">Search</button>
+                    </div>
+                </div>
+                <div class="mainbody">
+                    <!-- Add Task Form -->
+                    <form id="addTaskForm" style="display: none;">
+                        <h2>Add Task</h2>
+                        <label for="taskName">Task Name:</label><br>
+                        <input type="text" id="taskName" name="taskName" required><br><br>
+                    
+                        <label for="taskDate">Date:</label><br>
+                        <input type="date" id="taskDate" name="taskDate" required><br><br>
+                    
+                        <label for="taskCategory">Category:</label><br>
+                        <input type="text" id="taskCategory" name="taskCategory"><br><br>
+                    
+                        <button type="submit" id="saveTaskBtn">Save Task</button>
+                        <button type="button" id="cancelTaskBtn">Cancel</button>
+                    </form>
+
+                    <!-- Task List -->
+                    <div id="taskList" style="display: none;">
+                        <button class="dltbtn">
+                            <i class="fa fa-trash"></i>Erase
+                        </button>
+                        <div id="taskItems"></div> <!-- Task items will be displayed here -->
+                    </div>
+
+                        <!-- Daily Summary -->
+                        <div class="dailySummaryOverlay">
+                            <div id="dailySummaryContainer" style="display: none;">
+                                <h3>Select a Date for Daily Summary</h3>
+                                
+                                <!-- Date picker for selecting date -->
+                                <input type="date" id="datePicker" />
+                                <button id="showSummaryBtn">Show Summary</button>
+
+                                <h3>Daily Summary for <span id="selectedDate"></span></h3>
+                                <p id="completedTasksCount">Total Completed Tasks: 0</p>
+                                <p id="totalTimeSpent">Total Time Spent: 00:00</p>
+
+                                <div id="dailyTaskList"></div>
+                                <button id="closeSummaryBtn">Close</button>
+                            </div>
+                        </div>
+
+                        <!-- Weekly Summary -->
+                        <div class="weeklySummaryOverlay">
+                            <div id="weeklySummaryContainer" style="display: none;">
+                                <h3>Select a Week for Weekly Summary</h3>
+                                <input type="week" id="weekPicker" />
+                                <button id="showWeeklySummaryBtn">Show Weekly Summary</button>
+                        
+                                <h3>Weekly Summary for <span id="selectedWeek"></span></h3>
+                                <p id="weeklyCompletedTasksCount">Total Completed Tasks: 0</p>
+                                <p id="weeklyTotalTimeSpent">Total Time Spent: 00:00</p>
+                                <div id="weeklyTaskList"></div>
+                        
+                                <button id="closeWeeklySummaryBtn">Close</button>
+                            </div>
+                        </div>
+                        
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <script src="/JS/script.js"></script>
+    </body>
+</html>
